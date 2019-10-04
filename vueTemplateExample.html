@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./jsonData01.js" />
+
+	<script type = "text/babel">
+	</script>
+
+</head>
+<body>
+  <div id="app">
+	<h1>HTML Static Example Showing JSON Values</h1>
+	<form>
+		<div>
+			Name:<input type="text" v-model="name" ></input>
+		</div>
+		<div>
+			Channel:<input type="text" v-model="channel" ></input>
+		</div>
+		<div>
+		<a v-bind:href="youtubeUrl">{{channel}}</a>
+		</div>
+	</form>
+	<h2>Detail</h2>
+	<ul>
+		<li>
+			<span v-bind:style="{margin:'40px' ,border:'5px solid pink',color:colorValue}"><a v-bind:href="sites[0].url">{{sites[0].name}}</a>
+		</li>
+		<li>
+			<span v-bind:class="{errorClass:isClassFoo}" v-bind:style="{margin:'40px' ,border:'5px solid pink',color:colorValue}" ><a v-bind:href="sites[1].url">{{sites[1].name}}</a></span>
+		</li>
+		<li>
+			<span v-bind:style="{margin:'40px' ,border:'5px solid pink',color:colorValue}" ><a v-bind:href="sites[2].url">{{sites[2].name}}</a></span>
+		</li>
+		<li>
+			<span><a v-bind:href="sites[3].url">{{sites[3].name}}</a></span>
+		</li>
+	</ul>
+  </div>
+
+
+
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: myJson});
+  </script>
+</body>
+</html>
